@@ -107,38 +107,16 @@
             nuevoMensaje.classList.add("mensaje");
             mensajesDiv.appendChild(nuevoMensaje);
             mensajesDiv.scrollTop = mensajesDiv.scrollHeight;
-            guardarMensajesLocalmente(); // Llamar a la función para guardar mensajes localmente
         };
 
         function enviarMensaje() {
             var mensaje = document.getElementById("mensaje").value;
             var archivo = document.getElementById("archivo").files[0];
             if (mensaje.trim() !== "" || archivo) {
-                var mensajesDiv = document.getElementById("mensajes");
-                var nuevoMensaje = document.createElement("div");
-                nuevoMensaje.textContent = "Usuario: " + mensaje.trim() !== "" ? mensaje : "Archivo adjunto: " + archivo.name;
-                nuevoMensaje.classList.add("mensaje");
-                mensajesDiv.appendChild(nuevoMensaje);
-                mensajesDiv.scrollTop = mensajesDiv.scrollHeight;
                 ws.send(JSON.stringify({mensaje: mensaje.trim() !== "" ? mensaje : "Archivo adjunto: " + archivo.name, usuario: "Usuario"}));
                 document.getElementById("mensaje").value = "";
-                guardarMensajesLocalmente(); // Llamar a la función para guardar mensajes localmente
             }
         }
-
-        function guardarMensajesLocalmente() {
-            var mensajes = document.getElementById("mensajes").innerHTML;
-            localStorage.setItem("chatMensajes", mensajes);
-        }
-
-        function cargarMensajesGuardados() {
-            var mensajes = localStorage.getItem("chatMensajes");
-            if (mensajes) {
-                document.getElementById("mensajes").innerHTML = mensajes;
-            }
-        }
-
-        cargarMensajesGuardados(); // Cargar mensajes guardados al cargar la página
     </script>
 </body>
 </html>
