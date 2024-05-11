@@ -35,8 +35,8 @@
             margin-bottom: 20px;
             background-color: rgba(0, 128, 0, 0.3);
             border: 2px solid lime;
-            overflow-y: auto; /* Agregamos una barra de desplazamiento vertical si el contenido excede el tamaño del contenedor */
-            max-height: 300px; /* Limitamos la altura máxima del chat para evitar que crezca indefinidamente */
+            overflow-y: auto;
+            max-height: 300px;
         }
 
         section h2 {
@@ -65,7 +65,7 @@
         }
 
         .mensaje {
-            margin-bottom: 5px; /* Agregamos un pequeño espacio entre mensajes */
+            margin-bottom: 5px;
         }
     </style>
 </head>
@@ -95,34 +95,24 @@
     </main>
 
     <script>
-        var contadorMensajes = {}; // Objeto para almacenar el contador de mensajes de cada usuario
+        var ws = new WebSocket("ws://localhost:8080"); // Cambia esto por la dirección de tu servidor WebSocket
+
+        ws.onmessage = function(event) {
+            var mensaje = event.data;
+            var mensajesDiv = document.getElementById("mensajes");
+            var nuevoMensaje = document.createElement("div");
+            nuevoMensaje.textContent = mensaje;
+            nuevoMensaje.classList.add("mensaje");
+            mensajesDiv.appendChild(nuevoMensaje);
+            mensajesDiv.scrollTop = mensajesDiv.scrollHeight;
+        };
 
         function enviarMensaje() {
             var mensaje = document.getElementById("mensaje").value;
             var archivo = document.getElementById("archivo").files[0];
             if (mensaje.trim() !== "" || archivo) {
-                var mensajesDiv = document.getElementById("mensajes");
-                var nuevoMensaje = document.createElement("div");
-                nuevoMensaje.textContent = mensaje.trim() !== "" ? mensaje : "Archivo adjunto: " + archivo.name;
-                nuevoMensaje.classList.add("mensaje"); // Agregamos una clase al nuevo mensaje para darle un estilo
-                mensajesDiv.appendChild(nuevoMensaje);
-                mensajesDiv.scrollTop = mensajesDiv.scrollHeight; // Hacemos que el chat se desplace automáticamente hacia abajo para mostrar el nuevo mensaje
+                ws.send(mensaje.trim() !== "" ? mensaje : "Archivo adjunto: " + archivo.name);
                 document.getElementById("mensaje").value = "";
-
-                // Contar mensajes del usuario
-                var usuario = "Usuario"; // Puedes obtener el nombre de usuario de alguna manera si lo deseas
-                if (!contadorMensajes[usuario]) {
-                    contadorMensajes[usuario] = 1;
-                } else {
-                    contadorMensajes[usuario]++;
-                }
-
-                // Verificar si el usuario ha enviado más de 5 mensajes iguales y eliminarlo si es así
-                if (contadorMensajes[usuario] > 5) {
-                    mensajesDiv.innerHTML = ""; // Eliminar todos los mensajes del chat
-                    mensajesDiv.textContent = "¡El usuario " + usuario + " ha sido eliminado por enviar spam!";
-                    contadorMensajes[usuario] = 0; // Reiniciar el contador de mensajes del usuario
-                }
             }
         }
     </script>
