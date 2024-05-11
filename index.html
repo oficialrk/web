@@ -97,6 +97,10 @@
     <script>
         var ws = new WebSocket("ws://localhost:8080"); // Cambia esto por la dirección de tu servidor WebSocket
 
+        ws.onopen = function(event) {
+            console.log("Conexión establecida con el servidor WebSocket.");
+        };
+
         ws.onmessage = function(event) {
             var data = JSON.parse(event.data);
             var usuario = data.usuario;
