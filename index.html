@@ -19,8 +19,7 @@
         header img {
             width: 200px;
             height: auto;
-            border-radius: 50%;
-            border: 3px solid lime;
+            border: 3px solid rgb(0, 0, 0);
         }
 
         main {
@@ -36,6 +35,8 @@
             margin-bottom: 20px;
             background-color: rgba(0, 128, 0, 0.3);
             border: 2px solid lime;
+            overflow-y: auto; /* Agregamos una barra de desplazamiento vertical si el contenido excede el tamaño del contenedor */
+            max-height: 300px; /* Limitamos la altura máxima del chat para evitar que crezca indefinidamente */
         }
 
         section h2 {
@@ -44,7 +45,7 @@
         }
 
         textarea {
-            width: 100%;
+            width: calc(100% - 20px);
             padding: 10px;
             margin-top: 10px;
             resize: none;
@@ -62,41 +63,66 @@
             background-color: black;
             color: lime;
         }
+
+        .mensaje {
+            margin-bottom: 5px; /* Agregamos un pequeño espacio entre mensajes */
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>¡Bienvenido al Rincón del Malvado!</h1>
-        <img src="tu_foto.jpg" alt="Tu foto malvada">
+        <h1>marki.exe</h1>
+        <img src="move2.jpg" alt="Tu foto malvada">
     </header>
     <main>
         <section id="imagenes">
-            <h2>Imágenes Malvadas</h2>
+            <h2>exposeds</h2>
             <!-- Aquí puedes agregar un carrusel o galería de imágenes -->
         </section>
         <section id="chat">
-            <h2>Chat Malvado</h2>
+            <h2>dark chat</h2>
             <div id="mensajes">
                 <!-- Aquí se mostrarán los mensajes del chat -->
             </div>
-            <textarea id="mensaje" placeholder="Escribe aquí tu mensaje malvado..."></textarea>
+            <textarea id="mensaje" placeholder="Escribe aquí tu mensaje o adjunta un archivo .py..."></textarea>
+            <input type="file" id="archivo" accept=".py">
             <button onclick="enviarMensaje()">Enviar</button>
         </section>
         <section id="informacion">
-            <h2>Información Personal</h2>
-            <p>Aquí puedes poner una breve descripción tuya, pero no demasiado reveladora...</p>
+            <h2>marki.exe ?</h2>
+            <p>marki.exe el mejor developer ddos tools port scanner bot nets btc miner todo lo ilegal aqui lo vas a poder encontrar </p>
         </section>
     </main>
 
     <script>
+        var contadorMensajes = {}; // Objeto para almacenar el contador de mensajes de cada usuario
+
         function enviarMensaje() {
             var mensaje = document.getElementById("mensaje").value;
-            if (mensaje.trim() !== "") {
+            var archivo = document.getElementById("archivo").files[0];
+            if (mensaje.trim() !== "" || archivo) {
                 var mensajesDiv = document.getElementById("mensajes");
                 var nuevoMensaje = document.createElement("div");
-                nuevoMensaje.textContent = mensaje;
+                nuevoMensaje.textContent = mensaje.trim() !== "" ? mensaje : "Archivo adjunto: " + archivo.name;
+                nuevoMensaje.classList.add("mensaje"); // Agregamos una clase al nuevo mensaje para darle un estilo
                 mensajesDiv.appendChild(nuevoMensaje);
+                mensajesDiv.scrollTop = mensajesDiv.scrollHeight; // Hacemos que el chat se desplace automáticamente hacia abajo para mostrar el nuevo mensaje
                 document.getElementById("mensaje").value = "";
+
+                // Contar mensajes del usuario
+                var usuario = "Usuario"; // Puedes obtener el nombre de usuario de alguna manera si lo deseas
+                if (!contadorMensajes[usuario]) {
+                    contadorMensajes[usuario] = 1;
+                } else {
+                    contadorMensajes[usuario]++;
+                }
+
+                // Verificar si el usuario ha enviado más de 5 mensajes iguales y eliminarlo si es así
+                if (contadorMensajes[usuario] > 5) {
+                    mensajesDiv.innerHTML = ""; // Eliminar todos los mensajes del chat
+                    mensajesDiv.textContent = "¡El usuario " + usuario + " ha sido eliminado por enviar spam!";
+                    contadorMensajes[usuario] = 0; // Reiniciar el contador de mensajes del usuario
+                }
             }
         }
     </script>
