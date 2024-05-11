@@ -113,7 +113,13 @@
             var mensaje = document.getElementById("mensaje").value;
             var archivo = document.getElementById("archivo").files[0];
             if (mensaje.trim() !== "" || archivo) {
-                ws.send(JSON.stringify({mensaje: mensaje.trim() !== "" ? mensaje : "Archivo adjunto: " + archivo.name, usuario: "Usuario"})); // Cambia "Usuario" por el nombre de usuario del remitente
+                var mensajesDiv = document.getElementById("mensajes");
+                var nuevoMensaje = document.createElement("div");
+                nuevoMensaje.textContent = "Usuario: " + mensaje.trim() !== "" ? mensaje : "Archivo adjunto: " + archivo.name;
+                nuevoMensaje.classList.add("mensaje");
+                mensajesDiv.appendChild(nuevoMensaje);
+                mensajesDiv.scrollTop = mensajesDiv.scrollHeight;
+                ws.send(JSON.stringify({mensaje: mensaje.trim() !== "" ? mensaje : "Archivo adjunto: " + archivo.name, usuario: "Usuario"}));
                 document.getElementById("mensaje").value = "";
             }
         }
