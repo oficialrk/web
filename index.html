@@ -98,10 +98,12 @@
         var ws = new WebSocket("ws://localhost:8080"); // Cambia esto por la dirección de tu servidor WebSocket
 
         ws.onmessage = function(event) {
-            var mensaje = event.data;
+            var data = JSON.parse(event.data);
+            var usuario = data.usuario;
+            var mensaje = data.mensaje;
             var mensajesDiv = document.getElementById("mensajes");
             var nuevoMensaje = document.createElement("div");
-            nuevoMensaje.textContent = mensaje;
+            nuevoMensaje.textContent = usuario + ": " + mensaje;
             nuevoMensaje.classList.add("mensaje");
             mensajesDiv.appendChild(nuevoMensaje);
             mensajesDiv.scrollTop = mensajesDiv.scrollHeight;
@@ -111,7 +113,7 @@
             var mensaje = document.getElementById("mensaje").value;
             var archivo = document.getElementById("archivo").files[0];
             if (mensaje.trim() !== "" || archivo) {
-                ws.send(mensaje.trim() !== "" ? mensaje : "Archivo adjunto: " + archivo.name);
+                ws.send(JSON.stringify({mensaje: mensaje.trim() !== "" ? mensaje : "Archivo adjunto: " + archivo.name, usuario: "Usuario"})); // Cambia "Usuario" por el nombre de usuario del remitente
                 document.getElementById("mensaje").value = "";
             }
         }
