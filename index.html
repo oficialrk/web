@@ -67,6 +67,10 @@
         .mensaje {
             margin-bottom: 5px;
         }
+
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -88,20 +92,25 @@
             <input type="file" id="archivo" accept=".py">
             <button onclick="enviarMensaje()">Enviar</button>
         </section>
-        <section id="informacion">
-            <h2>marki.exe ?</h2>
-            <p>marki.exe el mejor developer ddos tools port scanner bot nets btc miner todo lo ilegal aqui lo vas a poder encontrar </p>
+        <section id="login" class="hidden">
+            <h2>Iniciar sesión</h2>
+            <input type="text" id="usuario" placeholder="Nombre de usuario">
+            <input type="password" id="contrasena" placeholder="Contraseña">
+            <button onclick="iniciarSesion()">Iniciar sesión</button>
         </section>
     </main>
 
     <script>
         var ws = new WebSocket("ws://localhost:8080"); // Cambia esto por la dirección de tu servidor WebSocket
+        var usuarioActual = null;
 
         ws.onmessage = function(event) {
-            var mensaje = event.data;
+            var data = JSON.parse(event.data);
+            var mensaje = data.mensaje;
+            var usuario = data.usuario;
             var mensajesDiv = document.getElementById("mensajes");
             var nuevoMensaje = document.createElement("div");
-            nuevoMensaje.textContent = mensaje;
+            nuevoMensaje.textContent = usuario + ": " + mensaje;
             nuevoMensaje.classList.add("mensaje");
             mensajesDiv.appendChild(nuevoMensaje);
             mensajesDiv.scrollTop = mensajesDiv.scrollHeight;
@@ -111,9 +120,19 @@
             var mensaje = document.getElementById("mensaje").value;
             var archivo = document.getElementById("archivo").files[0];
             if (mensaje.trim() !== "" || archivo) {
-                ws.send(mensaje.trim() !== "" ? mensaje : "Archivo adjunto: " + archivo.name);
+                ws.send(JSON.stringify({mensaje: mensaje.trim() !== "" ? mensaje : "Archivo adjunto: " + archivo.name, usuario: usuarioActual}));
                 document.getElementById("mensaje").value = "";
             }
+        }
+
+        function iniciarSesion() {
+            var usuario = document.getElementById("usuario").value;
+            var contrasena = document.getElementById("contrasena").value;
+            // Aquí puedes realizar la autenticación con el servidor
+            // Por simplicidad, asumiremos que la autenticación es exitosa
+            usuarioActual = usuario;
+            document.getElementById("login").classList.add("hidden");
+            document.getElementById("chat").classList.remove("hidden");
         }
     </script>
 </body>
