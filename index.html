@@ -21,6 +21,27 @@
             text-align: center;
         }
 
+        #header h1 {
+            animation: blink 1s infinite, colorchange 3s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes colorchange {
+            0% { color: #fff; }
+            25% { color: #ffeb3b; }
+            50% { color: #ff5722; }
+            75% { color: #4caf50; }
+            100% { color: #fff; }
+        }
+
         #container {
             max-width: 800px;
             margin: 20px auto;
@@ -218,11 +239,4 @@
                 const moveY = Math.random() * 100 - 50;
                 circle1.style.transform = `translate(${moveX}px, ${moveY}px) scale(2)`;
                 circle2.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.5)`;
-                circle3.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.8)`;
-            }, 3000);
-        }
-
-        window.onload = moveBackgroundElements;
-    </script>
-</body>
-</html>
+                circle3.style.transform = `translate(${move
