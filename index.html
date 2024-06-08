@@ -22,7 +22,7 @@
         }
 
         #header h1 {
-            animation: blink 1s infinite, colorchange 3s infinite;
+            animation: blink 1s infinite, colorchange 3s infinite, moveLetters 2s infinite;
         }
 
         @keyframes blink {
@@ -40,6 +40,15 @@
             50% { color: #ff5722; } /* Naranja */
             75% { color: #4caf50; } /* Verde */
             100% { color: #ffffff; } /* Blanco */
+        }
+
+        @keyframes moveLetters {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(10px);
+            }
         }
 
         #container {
@@ -237,6 +246,4 @@
             setInterval(() => {
                 const moveX = Math.random() * 100 - 50;
                 const moveY = Math.random() * 100 - 50;
-                circle1.style.transform = `translate(${moveX}px, ${moveY}px) scale(2)`;
-                circle2.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.5)`;
-                circle3.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.
+                circle1.style
