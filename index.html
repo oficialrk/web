@@ -186,51 +186,44 @@
                 <img src="nitro.png" alt="nitro (1 mes)">
                 <h2>nitro (1 mes) $3</h2>
                 <p>1 mes de nitro boost por tan solo 3 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
-                <button onclick="buyNow(3)">Comprar ahora</button>
+                <button onclick="buyNow(3, 'nitro (1 mes)')">Comprar ahora</button>
             </div>
             <div class="product">
                 <img src="nitro.png" alt="nitro (1 año)">
                 <h2>nitro (1 año) $14</h2>
                 <p>1 año de nitro boost por tan solo 14 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
-                <button onclick="buyNow(14)">Comprar ahora</button>
+                <button onclick="buyNow(14, 'nitro (1 año)')">Comprar ahora</button>
             </div>
             <div class="product">
                 <img src="brawl.png" alt="Producto 3">
                 <h2>brawl pass plus (1 mes) $6</h2>
                 <p>1 mes de pase de brawl (plus) por tan solo 6 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
-                <button onclick="buyNow(6)">Comprar ahora</button>
+                <button onclick="buyNow(6, 'brawl pass plus (1 mes)')">Comprar ahora</button>
             </div>
             <div class="product">
                 <img src="antiguo.png" alt="n.png">
                 <h2>netflix acc $4</h2>
                 <p>1 mes de Netflix por tan solo 4 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
-                <button onclick="buyNow(4)">Comprar ahora</button>
+                <button onclick="buyNow(4, 'netflix acc')">Comprar ahora</button>
             </div>
             <div class="product">
                 <img src="gg.png" alt="Producto 5">
                 <h2>HBO MAX acc $3</h2>
                 <p>1 mes de HBO MAX por tan solo 3 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
-                <button onclick="buyNow(3)">Comprar ahora</button>
+                <button onclick="buyNow(3, 'HBO MAX acc')">Comprar ahora</button>
             </div>
             <div class="product">
                 <img src="dis.png" alt="Producto 6">
                 <h2>disney plus $2</h2>
                 <p>1 mes de Disney Plus por tan solo 2 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
-                <button onclick="buyNow(2)">Comprar ahora</button>
+                <button onclick="buyNow(2, 'disney plus')">Comprar ahora</button>
             </div>
         </div>
     </div>
 
     <!-- Formulario de PayPal -->
-    <form id="paypal-form" action="https://paypal.me/klkmio378?country.x=ES&locale.x=es_ES" method="post" style="display: none;">
+    <form id="paypal-form" action="https://paypal.me/klkmio378?country.x=ES&locale.x=es_ES" method="post" target="_blank">
         <input type="hidden" name="cmd" value="_xclick">
         <input type="hidden" name="business" value="progamealex9@gmail.com">
-        <input type="hidden" name="item_name" value="Productos de la tienda">
-        <input type="hidden" name="currency_code" value="EUR">
-        <input type="hidden" id="amount" name="amount" value="0">
-        <button id="paypal-button" type="submit">Comprar con PayPal</button>
-    </form>
-
-    <!-- Elementos de confianza -->
-    <div id="trust-elements">
-        <p>Envío rápido y seguro</p
+        <input type="hidden" name="item_name" id="item_name" value="Productos de la tienda">
+        <input type="hidden
