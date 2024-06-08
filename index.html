@@ -19,6 +19,7 @@
             color: #fff;
             padding: 20px;
             text-align: center;
+            position: relative;
         }
 
         #header h1 {
@@ -169,6 +170,15 @@
         #trust-elements p {
             margin: 5px 0;
         }
+
+        /* Estilos para el ícono de información */
+        #info-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -178,7 +188,8 @@
         <div id="circle3"></div>
     </div>
     <div id="header">
-        <h1>JC SHOP!</h1>
+        <h1>JC SHOP</h1>
+        <div id="info-icon" onclick="openInfoPage()">ℹ️</div>
     </div>
     <div id="container">
         <div id="products">
@@ -256,10 +267,13 @@
             document.getElementById('amount').value = price.toFixed(2);
             document.getElementById('paypal-button').click();
         }
-    </script>
 
-    <!-- Script para mover los elementos de fondo -->
-    <script>
+        // Función para abrir la página de información
+        function openInfoPage() {
+            window.open('info.html', '_blank');
+        }
+
+        // Script para mover los elementos de fondo
         function moveBackgroundElements() {
             const circle1 = document.getElementById('circle1');
             const circle2 = document.getElementById('circle2');
