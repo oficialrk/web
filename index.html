@@ -87,6 +87,16 @@
 
         .product h2 {
             margin-top: 10px;
+            animation: moveProductLetters 2s infinite;
+        }
+
+        @keyframes moveProductLetters {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(5px);
+            }
         }
 
         .product p {
@@ -243,7 +253,4 @@
             const circle2 = document.getElementById('circle2');
             const circle3 = document.getElementById('circle3');
 
-            setInterval(() => {
-                const moveX = Math.random() * 100 - 50;
-                const moveY = Math.random() * 100 - 50;
-                circle1.style
+            setInterval
