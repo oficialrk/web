@@ -179,78 +179,26 @@
             font-size: 24px;
             cursor: pointer;
         }
-
-        /* Estilos para el formulario de tickets */
-        #ticket-form-container {
-            margin-top: 40px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        
+        /* Estilos para el enlace de tickets */
+        #ticket-link {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
         }
 
-        #ticket-form-container h2 {
-            margin-top: 0;
-        }
-
-        #ticket-form-container form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        #ticket-form-container label {
-            margin-top: 10px;
-        }
-
-        #ticket-form-container input, 
-        #ticket-form-container textarea {
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        #ticket-form-container button {
+        #ticket-link a {
             background-color: #2c3e50;
             color: #fff;
-            border: none;
-            padding: 10px;
+            text-decoration: none;
+            padding: 10px 20px;
             border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
         }
 
-        #ticket-form-container button:hover {
+        #ticket-link a:hover {
             background-color: #34495e;
         }
     </style>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        (function() {
-            emailjs.init("your_user_id");
-        })();
-
-        function sendTicket(event) {
-            event.preventDefault();
-
-            const serviceID = 'your_service_id';
-            const templateID = 'your_template_id';
-
-            const params = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value
-            };
-
-            emailjs.send(serviceID, templateID, params)
-                .then(response => {
-                    alert('Ticket enviado con éxito!', response.status, response.text);
-                })
-                .catch(err => {
-                    alert('Hubo un problema al enviar el ticket.', err);
-                });
-        }
-    </script>
 </head>
 <body>
     <div id="background-elements">
@@ -277,21 +225,33 @@
                 <button onclick="buyNow(14)">Comprar ahora</button>
             </div>
             <div class="product">
-                <img src="mc.png" alt="mc cuenta full acceso">
-                <h2>mc cuenta full acceso $6</h2>
-                <p>Cuenta full acceso por tan solo 6 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
+                <img src="brawl.png" alt="Producto 3">
+                <h2>brawl pass plus (1 mes) $6</h2>
+                <p>1 mes de pase de brawl (plus) por tan solo 6 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
                 <button onclick="buyNow(6)">Comprar ahora</button>
             </div>
             <div class="product">
-                <img src="vbucks.png" alt="vbucks 1000">
-                <h2>vbucks 1000 $5</h2>
-                <p>1000 V-bucks por tan solo 5 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
-                <button onclick="buyNow(5)">Comprar ahora</button>
+                <img src="antiguo.png" alt="n.png">
+                <h2>netflix acc $4</h2>
+                <p>1 mes de Netflix por tan solo 4 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
+                <button onclick="buyNow(4)">Comprar ahora</button>
             </div>
             <div class="product">
-                <img src="spotify.png" alt="spotify">
-                <h2>spotify $2.50</h2>
-                <p>Cuenta de Spotify por tan solo 2.5 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
+                <img src="gg.png" alt="Producto 5">
+                <h2>HBO MAX acc $3</h2>
+                <p>1 mes de HBO MAX por tan solo 3 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
+                <button onclick="buyNow(3)">Comprar ahora</button>
+            </div>
+            <div class="product">
+                <img src="dis.png" alt="Producto 6">
+                <h2>disney plus $2</h2>
+                <p>1 mes de Disney Plus por tan solo 2 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
+                <button onclick="buyNow(2)">Comprar ahora</button>
+            </div>
+            <div class="product">
+                <img src="crunchy.png" alt="Producto 7">
+                <h2>crunchy $2.50</h2>
+                <p>1 mes de Crunchyroll por tan solo 2.50 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
                 <button onclick="buyNow(2.50)">Comprar ahora</button>
             </div>
             <div class="product">
@@ -302,20 +262,8 @@
             </div>
         </div>
 
-        <div id="ticket-form-container">
-            <h2>Enviar un Ticket</h2>
-            <form onsubmit="sendTicket(event)">
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Mensaje:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-
-                <button type="submit">Enviar</button>
-            </form>
+        <div id="ticket-link">
+            <a href="ticket.html" target="_blank">Enviar un Ticket</a>
         </div>
     </div>
 
