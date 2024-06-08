@@ -15,7 +15,7 @@
         }
 
         #header {
-            background-color: #673ab7;
+            background-color: #2c3e50;
             color: #fff;
             padding: 20px;
             text-align: center;
@@ -35,11 +35,11 @@
         }
 
         @keyframes colorchange {
-            0% { color: #ffffff; } /* Blanco */
-            25% { color: #ff0000; } /* Rojo */
-            50% { color: #ff5722; } /* Naranja */
-            75% { color: #4caf50; } /* Verde */
-            100% { color: #ffffff; } /* Blanco */
+            0% { color: #333333; } /* Gris oscuro */
+            25% { color: #4f4f4f; } /* Gris medio */
+            50% { color: #5f5f5f; } /* Gris */
+            75% { color: #6f6f6f; } /* Gris claro */
+            100% { color: #333333; } /* Gris oscuro */
         }
 
         @keyframes moveLetters {
@@ -47,7 +47,7 @@
                 transform: translateX(0);
             }
             50% {
-                transform: translateX(10px);
+                transform: translateX(5px);
             }
         }
 
@@ -105,7 +105,7 @@
         }
 
         .product button {
-            background-color: #673ab7;
+            background-color: #2c3e50;
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -115,7 +115,7 @@
         }
 
         .product button:hover {
-            background-color: #512da8;
+            background-color: #34495e;
         }
 
         /* Estilos para el fondo */
@@ -185,38 +185,50 @@
             <div class="product">
                 <img src="nitro.png" alt="nitro (1 mes)">
                 <h2>nitro (1 mes) $3</h2>
-                <p>1 mes de nitro boost por tan solo 3 euros cuando vayas a comprar escribe en la nota de paypal el producto y tu correo electronico para la entrega </p>
+                <p>1 mes de nitro boost por tan solo 3 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
                 <button onclick="buyNow(3)">Comprar ahora</button>
             </div>
             <div class="product">
                 <img src="nitro.png" alt="nitro (1 año)">
                 <h2>nitro (1 año) $14</h2>
-                <p>1 año de nitro boost por tan solo 14 euros cuando vayas a comprar escribe en la nota de paypal el producto y tu correo electronico para la entrega</p>
+                <p>1 año de nitro boost por tan solo 14 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
                 <button onclick="buyNow(14)">Comprar ahora</button>
             </div>
             <div class="product">
                 <img src="brawl.png" alt="Producto 3">
-                <h2>brawl pass plus (1mes) $6 </h2>
-                <p>1 mes de pase de brawl (plus) por tan solo 6.00 euros cuando vayas a comprar escribe en la nota de paypal el producto y tu correo electronico para la entrega</p>
-                <button onclick="buyNow(20)">Comprar ahora</button>
+                <h2>brawl pass plus (1 mes) $6</h2>
+                <p>1 mes de pase de brawl (plus) por tan solo 6 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
+                <button onclick="buyNow(6)">Comprar ahora</button>
             </div>
             <div class="product">
                 <img src="antiguo.png" alt="n.png">
                 <h2>netflix acc $4</h2>
-                <p>1 mes de netflix por tan solo $4 euros cuando vayas a comprar escribe en la nota de paypal el producto y tu correo electronico para la entrega </p>
-                <button onclick="buyNow(25)">Comprar ahora</button>
+                <p>1 mes de Netflix por tan solo 4 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
+                <button onclick="buyNow(4)">Comprar ahora</button>
             </div>
             <div class="product">
                 <img src="gg.png" alt="Producto 5">
-                <h2> HBO MAX acc $3</h2>
-                <p>1 mes de HBO MAX por tan solo $3 euros cuando vayas a comprar escribe en la nota de paypal el producto y tu correo electronico para la entrega</p>
-                <button onclick="buyNow(30)">Comprar ahora</button>
+                <h2>HBO MAX acc $3</h2>
+                <p>1 mes de HBO MAX por tan solo 3 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
+                <button onclick="buyNow(3)">Comprar ahora</button>
             </div>
             <div class="product">
                 <img src="dis.png" alt="Producto 6">
                 <h2>disney plus $2</h2>
-                <p>disfruta de 1 mes de disney cuando vayas a comprar escribe en la nota de paypal el producto y tu correo electronico para la entrega</p>
-                <button onclick="buyNow(35)">Comprar ahora</button>
+                <p>1 mes de Disney Plus por tan solo 2 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
+                <button onclick="buyNow(2)">Comprar ahora</button>
+            </div>
+            <div class="product">
+                <img src="crunchy.png" alt="Producto 7">
+                <h2>crunchy $2.50</h2>
+                <p>1 mes de Crunchyroll por tan solo 2.50 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
+                <button onclick="buyNow(2.50)">Comprar ahora</button>
+            </div>
+            <div class="product">
+                <img src="steam.png" alt="Producto 8">
+                <h2>steam $7</h2>
+                <p>1 mes de Steam por tan solo 7 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
+                <button onclick="buyNow(7)">Comprar ahora</button>
             </div>
         </div>
     </div>
@@ -253,6 +265,17 @@
             const circle2 = document.getElementById('circle2');
             const circle3 = document.getElementById('circle3');
 
-            setInterval
+            setInterval(() => {
+                const randomX = Math.random() * 100;
+                const randomY = Math.random() * 100;
 
-`puedes cambiarle los colores al titulo de jc SHOP y ponerle unos colores que demustren mas seriedad?
+                circle1.style.transform = `scale(2) translate(${randomX}px, ${randomY}px)`;
+                circle2.style.transform = `scale(1.5) translate(${randomX}px, ${randomY}px)`;
+                circle3.style.transform = `scale(1.8) translate(${randomX}px, ${randomY}px)`;
+            }, 3000);
+        }
+
+        moveBackgroundElements();
+    </script>
+</body>
+</html>
