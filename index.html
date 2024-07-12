@@ -1,21 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>black accounts</title>
+    <title>JC SHOP</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #2c3e50;
-            color: #fff;
+            background-color: #f5f5f5;
+            color: #333;
             margin: 0;
             padding: 0;
             position: relative;
         }
 
         #header {
-            background-color: #34495e;
+            background-color: #2c3e50;
             color: #fff;
             padding: 20px;
             text-align: center;
@@ -36,11 +37,11 @@
         }
 
         @keyframes colorchange {
-            0% { color: #ffffff; }
-            25% { color: #dcdcdc; }
-            50% { color: #bfbfbf; }
-            75% { color: #a3a3a3; }
-            100% { color: #ffffff; }
+            0% { color: #333333; }
+            25% { color: #4f4f4f; }
+            50% { color: #5f5f5f; }
+            75% { color: #6f6f6f; }
+            100% { color: #333333; }
         }
 
         @keyframes moveLetters {
@@ -56,6 +57,9 @@
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             position: relative;
             z-index: 1;
         }
@@ -187,13 +191,13 @@
         }
 
         .social-icons a {
-            color: #ffffff;
+            color: #2c3e50;
             text-decoration: none;
             margin: 0 5px;
         }
 
         .social-icons a:hover {
-            color: #dcdcdc;
+            color: #34495e;
         }
 
         /* Fondo blanco y negro con líneas desgastadas */
@@ -234,7 +238,7 @@
         <div id="circle3"></div>
     </div>
     <div id="header">
-        <h1>Black Accounts</h1>
+        <h1>JC SHOP</h1>
         <div id="info-icon" onclick="openInfoPage()">ℹ️</div>
     </div>
     <div id="container">
@@ -254,4 +258,92 @@
             <div class="product">
                 <img src="brawl.png" alt="Producto 3">
                 <h2>brawl pass plus (1 mes) $6</h2>
-                <p>1 mes de pase de brawl (plus) por tan solo 6 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega.
+                <p>1 mes de pase de brawl (plus) por tan solo 6 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
+                <button onclick="buyNow(6)">Comprar ahora</button>
+            </div>
+            <div class="product">
+                <img src="antiguo.png" alt="n.png">
+                <h2>netflix acc $4</h2>
+                <p>1 mes de Netflix por tan solo 4 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
+                <button onclick="buyNow(4)">Comprar ahora</button>
+            </div>
+            <div class="product">
+                <img src="gg.png" alt="Producto 5">
+                <h2>HBO MAX acc $3</h2>
+                <p>1 mes de HBO MAX por tan solo 3 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
+                <button onclick="buyNow(3)">Comprar ahora</button>
+            </div>
+            <div class="product">
+                <img src="dis.png" alt="Producto 6">
+                <h2>Disney+ acc $2</h2>
+                <p>1 mes de Disney+ por tan solo 2 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
+                <button onclick="buyNow(2)">Comprar ahora</button>
+            </div>
+            <div class="product">
+                <img src="crunchy.png" alt="Producto 7">
+                <h2>crunchy $2.50</h2>
+                <p>1 mes de Crunchyroll por tan solo 2.50 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
+                <button onclick="buyNow(2.50)">Comprar ahora</button>
+            </div>
+            <div class="product">
+                <img src="vapor.png" alt="Producto 8">
+                <h2>steam $7</h2>
+                <p>cuenta de Steam (OP) por tan solo 7 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
+                <button onclick="buyNow(7)">Comprar ahora</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulario de PayPal -->
+    <form id="paypal-form" action="https://paypal.me/klkmio378?country.x=ES&locale.x=es_ES" method="post" style="display: none;">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="progamealex9@gmail.com">
+        <input type="hidden" name="item_name" value="Productos de la tienda">
+        <input type="hidden" name="currency_code" value="EUR">
+        <input type="hidden" id="amount" name="amount" value="0">
+        <button id="paypal-button" type="submit">Comprar con PayPal</button>
+    </form>
+
+    <!-- Elementos de confianza -->
+    <div id="trust-elements">
+        <p>Envío rápido y seguro</p>
+        <p>Garantía de satisfacción</p>
+        <p>Atención al cliente las 24 horas</p>
+        <span class="social-icons">
+            <a href="https://www.instagram.com/tu_perfil_instagram" target="_blank">📸</a>
+            <a href="https://www.youtube.com/tu_canal_youtube" target="_blank">📹</a>
+        </span>
+    </div>
+
+    <script>
+        // Función para comprar ahora
+        function buyNow(price) {
+            document.getElementById('amount').value = price.toFixed(2);
+            document.getElementById('paypal-button').click();
+        }
+
+        // Función para abrir la página de información
+        function openInfoPage() {
+            window.open('info.html', '_blank');
+        }
+
+        // Script para mover los elementos de fondo
+        function moveBackgroundElements() {
+            const circle1 = document.getElementById('circle1');
+            const circle2 = document.getElementById('circle2');
+            const circle3 = document.getElementById('circle3');
+
+            setInterval(() => {
+                const randomX = Math.random() * 100;
+                const randomY = Math.random() * 100;
+
+                circle1.style.transform = `scale(2) translate(${randomX}px, ${randomY}px)`;
+                circle2.style.transform = `scale(1.5) translate(${randomX}px, ${randomY}px)`;
+                circle3.style.transform = `scale(1.8) translate(${randomX}px, ${randomY}px)`;
+            }, 3000);
+        }
+
+        moveBackgroundElements();
+    </script>
+</body>
+</html>
