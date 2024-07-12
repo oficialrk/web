@@ -4,36 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JC SHOP</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-vASf/GiLbQ1t4lp5S/1snDG0WBkGp6b0/DEsh9p3ytpnu0yG3zn7LSHl8ne1Jxfs7l/v2j5OULb6a7qD0P0MUQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            background-color: #0a2544; /* Cambiado a azul oscuro */
             color: #333;
             margin: 0;
             padding: 0;
             position: relative;
-        }
-
-        #navbar {
-            background-color: #333;
-            overflow: hidden;
-        }
-
-        #navbar a {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-        }
-
-        #navbar a:hover {
-            background-color: #ddd;
-            color: black;
         }
 
         #header {
@@ -72,6 +51,28 @@
             50% {
                 transform: translateX(5px);
             }
+        }
+
+        #navbar {
+            background-color: #1a252f;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-around; /* Distribuye los elementos equitativamente */
+            align-items: center; /* Centra verticalmente los elementos */
+            padding: 10px 0;
+        }
+
+        #navbar a {
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+        }
+
+        #navbar a:hover {
+            background-color: #575757;
         }
 
         #container {
@@ -181,12 +182,10 @@
 
         /* Estilos para elementos de confianza */
         #trust-elements {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
             text-align: center;
             padding: 20px;
+            background-color: #fff;
+            border-top: 1px solid #ccc;
         }
 
         #trust-elements p {
@@ -251,32 +250,52 @@
     </style>
 </head>
 <body>
-    <div id="navbar">
-        <a href="#" onclick="openPage('streaming.html')">Streaming</a>
-        <a href="#" onclick="openPage('juegos.html')">Juegos</a>
-        <a href="#" onclick="openPage('nitro.html')">Nitro</a>
-        <a href="#" onclick="openPage('b1ns.html')">B1ns</a>
+    <div id="background-pattern"></div>
+    <div id="grain"></div>
+    <div id="background-elements">
+        <div id="circle1"></div>
+        <div id="circle2"></div>
+        <div id="circle3"></div>
     </div>
-
     <div id="header">
-        <h1>JC SHOP</h1>
-        <div id="info-icon" onclick="openInfoPage()">ℹ️</div>
+        <h1>🚀 HEADER HTML 🚀</h1>
+        <p>✔️ PRODUCTO VERIFICADO POR OBRIOSQ 💫</p>
+        <i class="fab fa-twitter"></i>
     </div>
-
+    <div id="navbar">
+        <a href="streaming.html">Streaming</a>
+        <a href="juegos.html">Juegos</a>
+        <a href="nitro.html">Nitro</a>
+        <a href="b1ns.html">B1ns</a>
+    </div>
     <div id="container">
+        <h2>Productos Destacados</h2>
         <div id="products">
-            <!-- Aquí van los productos -->
             <div class="product">
-                <img src="nitro.png" alt="nitro (1 mes)">
-                <h2>nitro (1 mes) 15$</h2>
-                <p>se envia al correo a la hora de la compra</p>
-                <button>comprar ahora</button>
+                <img src="streaming.png" alt="streaming">
+                <h2>Streaming</h2>
+                <p>Descripción del producto.</p>
+                <button>Comprar ahora</button>
             </div>
             <div class="product">
-                <img src="bin.png" alt="bin">
-                <h2>bin</h2>
-                <p>15 dolares</p>
-                <button>comprar ahora</button>
+                <img src="juegos.png" alt="juegos">
+                <h2>Juegos</h2>
+                <p>Descripción del producto.</p>
+                <button>Comprar ahora</button>
             </div>
             <div class="product">
-                <img src="cc.png" alt="credicard"
+                <img src="nitro.png" alt="nitro">
+                <h2>Nitro</h2>
+                <p>Descripción del producto.</p>
+                <button>Comprar ahora</button>
+            </div>
+            <div class="product">
+                <img src="b1ns.png" alt="b1ns">
+                <h2>B1ns</h2>
+                <p>Descripción del producto.</p>
+                <button>Comprar ahora</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
