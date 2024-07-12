@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Streaming Products - JC SHOP</title>
+    <title>Discord Nitro Products - JC SHOP</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #aedcf6, #f0f8ff); /* Fondo azul clarito con gradiente */
+            background: #c3fdff; /* Fondo azul claro */
             color: #333;
             margin: 0;
             padding: 0;
             position: relative;
-            overflow-x: hidden; /* Para evitar scroll horizontal */
+            overflow-x: hidden;
         }
 
+        /* Estilos para el fondo abstracto */
         #background-shapes {
             position: fixed;
             top: 0;
@@ -25,65 +26,79 @@
             z-index: -1;
         }
 
+        /* Círculo grande */
         #circle1 {
             position: absolute;
-            top: 10%;
+            top: -50px;
+            left: -150px;
+            width: 600px;
+            height: 600px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        /* Círculo mediano */
+        #circle2 {
+            position: absolute;
+            bottom: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        /* Triángulo */
+        #triangle1 {
+            position: absolute;
+            top: 50%;
             left: 10%;
             width: 200px;
             height: 200px;
-            background-color: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.25);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            transform: translateY(-50%);
             z-index: -1;
         }
 
-        #circle2 {
+        /* Líneas diagonales */
+        #line1, #line2 {
             position: absolute;
-            bottom: 5%;
-            right: 15%;
-            width: 250px;
-            height: 250px;
-            background-color: rgba(255, 255, 255, 0.6);
-            border-radius: 50%;
+            width: 100%;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.15);
             z-index: -1;
         }
 
-        #triangle1 {
-            position: absolute;
+        #line1 {
             top: 20%;
-            left: 50%;
-            width: 150px;
-            height: 150px;
-            background-color: rgba(255, 255, 255, 0.7);
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-            transform: translateX(-50%);
-            z-index: -1;
+            left: 0;
+            transform: rotate(45deg);
         }
 
-        #triangle2 {
-            position: absolute;
-            bottom: 10%;
-            right: 5%;
-            width: 180px;
-            height: 180px;
-            background-color: rgba(255, 255, 255, 0.8);
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-            z-index: -1;
+        #line2 {
+            bottom: 20%;
+            right: 0;
+            transform: rotate(135deg);
         }
 
-        /* Estilos adicionales para la página */
+        /* Estilos para la página principal */
         #header {
             background-color: #3a7ca5; /* Encabezado azul oscuro */
             color: #fff;
             padding: 20px;
             text-align: center;
             position: relative;
+            z-index: 1;
         }
 
         #container {
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+            background-color: #fff;
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             position: relative;
@@ -142,8 +157,10 @@
         #trust-elements {
             text-align: center;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+            background-color: #fff;
             border-top: 1px solid #ccc;
+            position: relative;
+            z-index: 1;
         }
 
         #trust-elements p {
@@ -170,13 +187,16 @@
     </style>
 </head>
 <body>
+    <!-- Elementos del fondo -->
     <div id="background-shapes">
         <div id="circle1"></div>
         <div id="circle2"></div>
         <div id="triangle1"></div>
-        <div id="triangle2"></div>
+        <div id="line1"></div>
+        <div id="line2"></div>
     </div>
 
+    <!-- Contenido principal -->
     <div id="header">
         <h1>🚀 Discord Nitro 🚀</h1>
         <p>✔️ PRODUCTO VERIFICADO ✔️</p>
@@ -185,24 +205,25 @@
 
     <div id="container">
         <div id="products">
-            <!-- Aquí van los productos de Discord Nitro -->
+            <!-- Productos de Discord Nitro -->
             <div class="product">
                 <img src="nitro.png" alt="Nitro (1 mes)">
                 <h2>Nitro (1 mes) $5</h2>
                 <p>Disfruta de 1 mes de Nitro Boost por solo $5. Escribe en la nota de PayPal el producto y tu correo electrónico para la entrega.</p>
-                <button onclick="buyNow(3)">Comprar ahora</button>
+                <button onclick="buyNow(5)">Comprar ahora</button>
             </div>
             <!-- Puedes agregar más productos aquí -->
         </div>
     </div>
 
+    <!-- Elementos de confianza -->
     <div id="trust-elements">
         <p>Envío rápido y seguro</p>
         <p>Garantía de satisfacción</p>
         <p>Atención al cliente las 24 horas</p>
         <span class="social-icons">
             <a href="https://www.instagram.com/xrdxabisa/" target="_blank">📸</a>
-            <a href="https://www.youtube.com/@Faze-MTA/videos"_blank">📹</a>
+            <a href="https://www.youtube.com/@Faze-MTA/videos" target="_blank">📹</a>
         </span>
     </div>
 </body>
