@@ -26,62 +26,31 @@
             z-index: -1;
         }
 
-        /* Círculo grande */
-        #circle1 {
+        /* Imágenes de fondo */
+        #trees {
             position: absolute;
-            top: -50px;
-            left: -150px;
-            width: 600px;
-            height: 600px;
-            background-color: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            z-index: -1;
-        }
-
-        /* Círculo mediano */
-        #circle2 {
-            position: absolute;
-            bottom: -100px;
-            right: -100px;
-            width: 400px;
-            height: 400px;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            z-index: -1;
-        }
-
-        /* Triángulo */
-        #triangle1 {
-            position: absolute;
-            top: 50%;
-            left: 10%;
-            width: 200px;
-            height: 200px;
-            background-color: rgba(255, 255, 255, 0.25);
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-            transform: translateY(-50%);
-            z-index: -1;
-        }
-
-        /* Líneas diagonales */
-        #line1, #line2 {
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background-color: rgba(255, 255, 255, 0.15);
-            z-index: -1;
-        }
-
-        #line1 {
-            top: 20%;
+            top: 0;
             left: 0;
-            transform: rotate(45deg);
+            width: 100%;
+            height: 100%;
+            background-image: url('trees.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+            z-index: -1;
         }
 
-        #line2 {
-            bottom: 20%;
-            right: 0;
-            transform: rotate(135deg);
+        #clouds {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('clouds.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0.3;
+            z-index: -1;
         }
 
         /* Estilos para la página principal */
@@ -189,11 +158,8 @@
 <body>
     <!-- Elementos del fondo -->
     <div id="background-shapes">
-        <div id="circle1"></div>
-        <div id="circle2"></div>
-        <div id="triangle1"></div>
-        <div id="line1"></div>
-        <div id="line2"></div>
+        <div id="trees"></div>
+        <div id="clouds"></div>
     </div>
 
     <!-- Contenido principal -->
