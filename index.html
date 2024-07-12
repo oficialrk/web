@@ -56,15 +56,18 @@
         #navbar {
             background-color: #1a252f;
             overflow: hidden;
+            display: flex;
+            justify-content: space-around; /* Distribuye los elementos equitativamente */
+            align-items: center; /* Centra verticalmente los elementos */
+            padding: 10px 0;
         }
 
         #navbar a {
-            float: left;
-            display: block;
             color: white;
             text-align: center;
             padding: 14px 20px;
             text-decoration: none;
+            display: block;
         }
 
         #navbar a:hover {
@@ -254,8 +257,9 @@
         <div id="circle3"></div>
     </div>
     <div id="header">
-        <h1>JC SHOP</h1>
-        <div id="info-icon" onclick="openInfoPage()">ℹ️</div>
+        <h1>HEADER HTML</h1>
+        <p>Free Streaming xxx de OBITOSQ por DAVIPRRO</p>
+        <i class="fab fa-twitter"></i>
     </div>
     <div id="navbar">
         <a href="#streaming">Streaming</a>
@@ -331,10 +335,6 @@
         </div>
     </div>
     <script>
-        function openInfoPage() {
-            window.location.href = "info.html"; // Cambia "info.html" por la URL de la página de información
-        }
-
         function buyNow(product, price) {
             const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=your_email@gmail.com&item_name=${product}&amount=${price}&currency_code=USD`;
             window.location.href = paypalUrl;
