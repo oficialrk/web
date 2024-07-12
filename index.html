@@ -244,19 +244,19 @@
                 <img src="nitro.png" alt="nitro (1 mes)">
                 <h2>nitro (1 mes) $3</h2>
                 <p>1 mes de nitro boost por tan solo 3 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
-                <button onclick="buyNow(3)">Comprar ahora</button>
+                <button onclick="buyNow('nitro (1 mes)', 3)">Comprar ahora</button>
             </div>
             <div class="product">
                 <img src="nitro.png" alt="nitro (1 año)">
                 <h2>nitro (1 año) $14</h2>
-                <p>1 año de nitro boost por tan solo 14 euros. Cuando vayas a comprar, escribe en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
-                <button onclick="buyNow(14)">Comprar ahora</button>
+                <p>1 año de nitro boost por solo 14 euros. Asegúrate de incluir en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
+                <button onclick="buyNow('nitro (1 año)', 14)">Comprar ahora</button>
             </div>
             <div class="product">
-                <img src="baneo.png" alt="Baneo de cuenta">
-                <h2>Baneo de cuenta</h2>
-                <p>Descripción del producto 3.</p>
-                <button onclick="buyNow(5)">Comprar ahora</button>
+                <img src="baneos.png" alt="Baneo de cuenta">
+                <h2>Baneo de cuenta $5</h2>
+                <p>Servicio de baneo de cuenta por solo 5 euros. Incluye en la nota de PayPal el producto y tu correo electrónico para la entrega. Las entregas se realizan en 1 a 2 días según la disponibilidad del staff.</p>
+                <button onclick="buyNow('Baneo de cuenta', 5)">Comprar ahora</button>
             </div>
         </div>
         <div id="trust-elements">
@@ -275,9 +275,9 @@
             window.location.href = "info.html"; // Cambia "info.html" por la URL de la página de información
         }
 
-        function buyNow(price) {
-            alert("El precio del producto es $" + price);
-            // Aquí podrías agregar la lógica para procesar la compra
+        function buyNow(product, price) {
+            const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=YOUR_PAYPAL_EMAIL&item_name=${product}&amount=${price}&currency_code=USD`;
+            window.location.href = paypalUrl;
         }
     </script>
 </body>
