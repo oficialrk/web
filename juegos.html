@@ -1,44 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juegos - Black Acounts</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div id="header">
-        <h1>🎮 Juegos 🎮</h1>
-        <p>✔️ PRODUCTO VERIFICADO ✔️</p>
-        <i class="fab fa-twitter"></i>
-    </div>
-    <div id="container">
-        <div id="products">
-            <!-- Aquí van los productos de juegos -->
-            <div class="product">
-                <img src="juego1.png" alt="Nombre del Juego 1">
-                <h2>Nombre del Juego 1 $10</h2>
-                <p>Descripción del juego 1. Precio: $10</p>
-                <button onclick="buyNow(10)">Comprar ahora</button>
-            </div>
-            <div class="product">
-                <img src="juego2.png" alt="Nombre del Juego 2">
-                <h2>Nombre del Juego 2 $15</h2>
-                <p>Descripción del juego 2. Precio: $15</p>
-                <button onclick="buyNow(15)">Comprar ahora</button>
-            </div>
-            <!-- Puedes agregar más productos aquí -->
-        </div>
-    </div>
-    <div id="trust-elements">
-        <p>Envío rápido y seguro</p>
-        <p>Garantía de satisfacción</p>
-        <p>Atención al cliente las 24 horas</p>
-        <span class="social-icons">
-            <a href="https://www.instagram.com/tu_perfil_instagram" target="_blank">📸</a>
-            <a href="https://www.youtube.com/tu_canal_youtube" target="_blank">📹</a>
-        </span>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #7e57c2; /* Cambia el color de fondo a morado */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+#header {
+    background-color: #512da8; /* Cambia el color de fondo del encabezado */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+#container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+#products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    margin-top: 20px;
+}
+
+.product {
+    background-color: #ba68c8; /* Color de fondo de cada producto */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.product img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.product h2 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.product p {
+    flex-grow: 1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.product button {
+    background-color: #673ab7; /* Color de fondo del botón */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición para el color de fondo */
+}
+
+.product button:hover {
+    background-color: #9575cd; /* Color de fondo al pasar el mouse */
+}
+
+#trust-elements {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+}
+
+#trust-elements p {
+    margin: 5px 0;
+    display: inline;
+    margin-right: 10px;
+}
+
+.social-icons {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 24px;
+}
+
+.social-icons a {
+    color: #673ab7; /* Color de los iconos sociales */
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.social-icons a:hover {
+    color: #9575cd; /* Color al pasar el mouse */
+}
