@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #0a2544; /* Cambiado a azul oscuro */
+            background-color: #0a2544; /* Color de fondo azul oscuro */
             color: #333;
             margin: 0;
             padding: 0;
@@ -69,10 +69,11 @@
             text-decoration: none;
             display: block;
             cursor: pointer;
+            transition: background-color 0.3s ease; /* Transición para el color de fondo */
         }
 
         #navbar a:hover {
-            background-color: #575757;
+            background-color: #575757; /* Color de fondo al pasar el mouse */
         }
 
         #container {
@@ -94,14 +95,14 @@
         }
 
         .product {
-            background-color: #61065571;
-            padding: 10px;
+            background-color: #f0f0f0;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             align-items: center;
+            text-align: center;
         }
 
         .product img {
@@ -111,21 +112,14 @@
 
         .product h2 {
             margin-top: 10px;
-            animation: moveProductLetters 2s infinite;
-        }
-
-        @keyframes moveProductLetters {
-            0%, 100% {
-                transform: translateX(0);
-            }
-            50% {
-                transform: translateX(5px);
-            }
+            font-size: 1.5rem;
+            font-weight: bold;
         }
 
         .product p {
             flex-grow: 1;
             text-align: center;
+            margin-bottom: 20px;
         }
 
         .product button {
@@ -135,11 +129,11 @@
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 10px;
+            transition: background-color 0.3s ease; /* Transición para el color de fondo */
         }
 
         .product button:hover {
-            background-color: #34495e;
+            background-color: #34495e; /* Color de fondo al pasar el mouse */
         }
 
         /* Estilos para el fondo */
@@ -150,7 +144,7 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            z-index: 0;
+            z-index: -1;
         }
 
         #background-elements div {
@@ -178,20 +172,6 @@
             bottom: -50px;
             left: 50%;
             transform: translateX(-50%) scale(1.8);
-        }
-
-        /* Estilos para elementos de confianza */
-        #trust-elements {
-            text-align: center;
-            padding: 20px;
-            background-color: #fff;
-            border-top: 1px solid #ccc;
-        }
-
-        #trust-elements p {
-            margin: 5px 0;
-            display: inline;
-            margin-right: 10px;
         }
 
         /* Estilos para el ícono de información */
@@ -269,33 +249,9 @@
         <a href="b1ns.html">B1ns</a>
     </div>
     <div id="container">
-        <h2>Productos Destacados</h2>
-        <div id="products">
-            <div class="product">
-                <img src="streaming.png" alt="streaming">
-                <h2>Streaming</h2>
-                <p>Descripción del producto.</p>
-                <button>Comprar ahora</button>
-            </div>
-            <div class="product">
-                <img src="juegos.png" alt="juegos">
-                <h2>Juegos</h2>
-                <p>Descripción del producto.</p>
-                <button>Comprar ahora</button>
-            </div>
-            <div class="product">
-                <img src="nitro.png" alt="nitro">
-                <h2>Nitro</h2>
-                <p>Descripción del producto.</p>
-                <button>Comprar ahora</button>
-            </div>
-            <div class="product">
-                <img src="b1ns.png" alt="b1ns">
-                <h2>B1ns</h2>
-                <p>Descripción del producto.</p>
-                <button>Comprar ahora</button>
-            </div>
-        </div>
+        <!-- Aquí iría el contenido de la página principal -->
+        <h2>Contenido de la Página Principal</h2>
+        <p>Bienvenido a JC SHOP. Aquí puedes encontrar una variedad de productos interesantes.</p>
     </div>
 </body>
 </html>
