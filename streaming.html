@@ -7,16 +7,73 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #aedcf6; /* Fondo azul clarito */
-            background-image: url('path/to/your/background-image.jpg'); /* Relleno de fondo (opcional) */
-            background-size: cover;
-            background-repeat: no-repeat;
+            background: linear-gradient(135deg, #aedcf6, #f0f8ff); /* Fondo azul clarito con gradiente */
             color: #333;
             margin: 0;
             padding: 0;
             position: relative;
+            overflow-x: hidden; /* Para evitar scroll horizontal */
         }
 
+        #background-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        #circle1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        #circle2 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(50%, 50%);
+            z-index: -1;
+        }
+
+        #triangle1 {
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255, 255, 255, 0.3);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            transform: rotate(45deg);
+            z-index: -1;
+        }
+
+        #triangle2 {
+            position: absolute;
+            bottom: 10%;
+            right: 15%;
+            width: 120px;
+            height: 120px;
+            background-color: rgba(255, 255, 255, 0.3);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            transform: rotate(135deg);
+            z-index: -1;
+        }
+
+        /* Estilos adicionales para la página */
         #header {
             background-color: #3a7ca5; /* Encabezado azul oscuro */
             color: #fff;
@@ -116,11 +173,19 @@
     </style>
 </head>
 <body>
+    <div id="background-shapes">
+        <div id="circle1"></div>
+        <div id="circle2"></div>
+        <div id="triangle1"></div>
+        <div id="triangle2"></div>
+    </div>
+
     <div id="header">
         <h1>🚀 Discord Nitro 🚀</h1>
         <p>✔️ PRODUCTO VERIFICADO ✔️</p>
         <i class="fab fa-twitter"></i>
     </div>
+
     <div id="container">
         <div id="products">
             <!-- Aquí van los productos de Discord Nitro -->
@@ -130,9 +195,10 @@
                 <p>Disfruta de 1 mes de Nitro Boost por solo $5. Escribe en la nota de PayPal el producto y tu correo electrónico para la entrega.</p>
                 <button onclick="buyNow(3)">Comprar ahora</button>
             </div>
-         
+            <!-- Puedes agregar más productos aquí -->
         </div>
     </div>
+
     <div id="trust-elements">
         <p>Envío rápido y seguro</p>
         <p>Garantía de satisfacción</p>
